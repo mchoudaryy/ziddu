@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Root.master.cs" Inherits="Root" %>
+
+<%@ Register Src="~/Menu.ascx" TagPrefix="uc" TagName="menu" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title>Ziddu - Marketplace for Decentralized Smart Contracts</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/ziddu-warehouse-coin.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/72x72-Ziddu.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/114x114_Ziddu.png">
+
+    <!-- Load Core CSS 
+        =====================================-->
+    <link rel="stylesheet" href="assets/css/core/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/core/animate.min.css">
+
+    <!-- Load Main CSS 
+        =====================================-->
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/color/pasific.css">
+    <link rel="stylesheet" href="assets/css/main/setting.css">
+    <link rel="stylesheet" href="assets/css/main/hover.css">
+
+    <!-- Load OWL Carousel CSS 
+        =====================================-->
+    <link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/icon/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/icon/et-line-font.css">
+
+    <!-- Load JS
+        HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+        WARNING: Respond.js doesn't work if you view the page via file://
+        =====================================-->
+
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="100">
+    <form id="form1" runat="server">
+        <!-- Page Loader
+        ===================================== -->
+        <div id="pageloader">
+            <div class="loader-item">
+                <img src="assets/images/puff.svg" alt="loading...">
+            </div>
+        </div>
+        <a href="#page-top" class="go-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+        <!-- Navigation Area
+        ===================================== -->
+        <nav class="navbar navbar-pasific navbar-mp navbar-standart megamenu navbar-fixed-top top-nav-collapse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><i class="fa fa-bars"></i></button>
+                    <a class="navbar-brand page-scroll" href="default.aspx">
+                        <img src="assets/images/ziddu-logo.svg" alt="Ziddu"></a>
+                </div>
+                <div class="navbar-collapse collapse navbar-main-collapse">
+                    <uc:menu runat="server" ID="menu" />
+                </div>
+            </div>
+        </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="footer-two bt-solid-1  bg-gray">
+            <div class="container-fluid pt20">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- copyright start -->
+                        <div class="col-md-6 col-sm-6 col-xs-6 pull-left">
+                            <p class="small">© 2017 Longfin Corp (NASDAQ: LFIN), All Rights Reserved</p>
+                        </div>
+                        <!-- copyright end -->
+
+                        <!-- footer bottom start -->
+                        <div class="col-md-6 col-sm-6 col-xs-6 pull-right"></div>
+                        <!-- footer bottom end -->
+
+                    </div>
+                    <!-- row end -->
+                </div>
+                <!-- container end -->
+            </div>
+            <!-- container-fluid end -->
+        </div>
+
+        <!-- JQuery Core
+        =====================================-->
+        <script src="assets/js/core/jquery.min.js"></script>
+        <script src="assets/js/core/bootstrap.min.js"></script>
+
+
+
+        <!-- JQuery Main
+        =====================================-->
+        <script src="assets/js/main/jquery.appear.js"></script>
+        <script src="assets/js/main/isotope.pkgd.min.js"></script>
+        <script src="assets/js/main/parallax.min.js"></script>
+        <script src="assets/js/main/jquery.countTo.js"></script>
+        <script src="assets/js/main/owl.carousel.min.js"></script>
+        <script src="assets/js/main/jquery.sticky.js"></script>
+        <script src="assets/js/main/ion.rangeSlider.min.js"></script>
+        <script src="assets/js/main/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/main/main.js"></script>
+        <%= Ziddu.Utility.ShowHightList() %>
+    </form>
+</body>
+</html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3186158-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-3186158-1');
+</script>

@@ -1,0 +1,235 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User_User" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title>Ziddu - Marketplace for Decentralized Smart Contracts</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/ziddu-warehouse-coin.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/72x72-Ziddu.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/114x114_Ziddu.png">
+
+    <!-- Load Core CSS 
+        =====================================-->
+    <link rel="stylesheet" href="../assets/css/core/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/core/animate.min.css">
+
+    <!-- Load Main CSS 
+        =====================================-->
+    <link rel="stylesheet" href="../assets/css/main/main.css">
+    <link rel="stylesheet" href="../assets/css/color/pasific.css">
+    <link rel="stylesheet" href="../assets/css/main/setting.css">
+    <link rel="stylesheet" href="../assets/css/main/hover.css">
+
+    <!-- Load OWL Carousel CSS 
+        =====================================-->
+    <link rel="stylesheet" href="../assets/css/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="../assets/css/icon/font-awesome.css">
+    <link rel="stylesheet" href="../assets/css/icon/et-line-font.css">
+
+    <!-- Load JS
+        HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+        WARNING: Respond.js doesn't work if you view the page via file://
+        =====================================-->
+
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="100">
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ID="sm">
+        </asp:ScriptManager>
+        <!-- Page Loader
+        ===================================== -->
+        <div id="pageloader">
+            <div class="loader-item">
+                <img src="../assets/images/puff.svg" alt="loading...">
+            </div>
+        </div>
+        <a href="#page-top" class="go-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+        <!-- Navigation Area
+        ===================================== -->
+        <nav class="navbar navbar-pasific navbar-mp navbar-standart megamenu navbar-fixed-top top-nav-collapse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><i class="fa fa-bars"></i></button>
+                    <a class="navbar-brand page-scroll" href="../default.aspx">
+                        <img src="../assets/images/ziddu-logo.svg" alt="Ziddu"></a>
+                </div>
+                <div class="navbar-collapse collapse navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../default.aspx">Home </a></li>
+                        <li><a href="../marketplace.aspx" class="active">Marketplace </a></li>
+                        <li><a href="../industry.aspx">Industry </a></li>
+                        <li class="dropdown"><a id="smartcontract" href="#" data-toggle="dropdown" class="dropdown-toggle color-light">Smart Contract </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../smartcontracts.aspx"><i class="fa  fa-file-text-o"></i>Ziddu Smart Contracts</a></li>
+                                <li><a href="https://etherscan.io/token/0xf634a7b188b57caa5734b21dfeb735ea2c74b0f5" target="_blank"><i class="fa  fa-connectdevelop"></i>ZWHC Token Tracker</a></li>
+                                <li><a href="../Ziddu_Whitepaper_V1.2.pdf" target="_blank"><i class="fa fa-file-text-o"></i>ZWHC Token White Paper</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../contact.aspx">Contact </a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Subheader Area
+        ===================================== -->
+        <header class="bg-grad-blood-mary mt50">
+            <div class="container">
+                <div class="row mt20 mb10 ml10">
+                    <div class="col-md-6 text-left">
+                        <h3 class="font-montserrat color-light text-uppercase">Wallet Information</h3>
+                    </div>
+                    <div class="col-md-6 text-right pt35"></div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="bg-gray pt25 pb25">
+                <div class="container text-center">
+                    <asp:UpdatePanel ID="upWallerInformation" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <div class="row">
+                                <div class="col-md-5 animated pulse visible" data-animation="pulse" data-animation-delay="500">
+                                    <div class="price price-one bg-light">
+                                        <div class="price-header" style="word-wrap: break-word;">
+                                            <h5>Receive Ethereum / ZWHC Coins to the below address.<br>
+                                                <strong>
+                                                    <asp:Label ID="lblYourEthereumAddress" runat="server"></asp:Label></strong><br>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 animated pulse visible" data-animation="pulse" data-animation-delay="500">
+                                    <div class="price price-one bg-light">
+                                        <div class="price-header">
+                                            <h5>ZWHC Balance: <strong>
+                                                <asp:Label ID="lblWalletBalanceZidduCoins" runat="server" Text="0"></asp:Label></strong><br>
+                                                [USD
+                                                <asp:Label ID="lblWalletBalanceZidduCoinsInUSD" runat="server" Text="0"></asp:Label>]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 animated pulse visible" data-animation="pulse" data-animation-delay="500">
+                                    <div class="price price-one bg-light">
+                                        <div class="price-header">
+                                            <h5>ETH Balance: <strong>
+                                                <asp:Label ID="lblWalletBalanceETH" runat="server" Text="0"></asp:Label></strong><br>
+                                                [USD
+                                                <asp:Label ID="lblWalletBalanceETHInUSD" runat="server" Text="0"></asp:Label>]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 animated pulse visible" data-animation="pulse" data-animation-delay="500">
+                                    <div class="price price-one bg-blue color-light">
+                                        <div class="price-header">
+                                            <h5>Total Wallet Balance<br>
+                                                <strong>$<asp:Label ID="lblTotalbalanceinUSD" runat="server" Text="0"></asp:Label></strong></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <asp:HiddenField ID="hf1" runat="server" />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="pt25 pb25">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 bg-gray p20">
+                            <ul class="icon-list-underline underline-double font-montserrat" style="font-size: 16px;">
+                                <%--<li id="receivel" style="color: #F30;"><i class="fa fa-cart-plus"></i><a id="receivea" href="receive.aspx" style="color: #F30;">Receive</a></li>--%>
+                                <li id="receivel"><i class="fa fa-cart-plus"></i><a id="receivea" href="receive.aspx">Receive</a></li>
+                                <li id="redeeml"><i class="fa fa-credit-card-alt"></i><a id="redeema" href="redm.aspx">Redeem</a></li>
+                                <li id="warehousel"><i class="fa fa-building-o"></i><a id="warehousea" href="warehouse.aspx">Warehouse</a></li>
+                                <li id="transactionsl"><i class="fa fa-database"></i><a id="transactionsa" href="transactions.aspx">Transactions</a></li>
+                                <li><i class="fa fa-sign-out"></i><a href="logout.aspx">Logout</a></li>
+                            </ul>
+                        </div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="footer-two bt-solid-1  bg-gray">
+            <div class="container-fluid pt20">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- copyright start -->
+                        <div class="col-md-6 col-sm-6 col-xs-6 pull-left">
+                            <p class="small">© 2017 Longfin Corp (NASDAQ: LFIN), All Rights Reserved</p>
+                        </div>
+                        <!-- copyright end -->
+
+                        <!-- footer bottom start -->
+                        <div class="col-md-6 col-sm-6 col-xs-6 pull-right"></div>
+                        <!-- footer bottom end -->
+
+                    </div>
+                    <!-- row end -->
+                </div>
+                <!-- container end -->
+            </div>
+            <!-- container-fluid end -->
+        </div>
+
+        <!-- JQuery Core
+        =====================================-->
+        <script src="../assets/js/core/jquery.min.js"></script>
+        <script src="../assets/js/core/bootstrap.min.js"></script>
+
+
+
+        <!-- JQuery Main
+        =====================================-->
+        <script src="../assets/js/main/jquery.appear.js"></script>
+        <script src="../assets/js/main/isotope.pkgd.min.js"></script>
+        <script src="../assets/js/main/parallax.min.js"></script>
+        <script src="../assets/js/main/jquery.countTo.js"></script>
+        <script src="../assets/js/main/owl.carousel.min.js"></script>
+        <script src="../assets/js/main/jquery.sticky.js"></script>
+        <script src="../assets/js/main/ion.rangeSlider.min.js"></script>
+        <script src="../assets/js/main/imagesloaded.pkgd.min.js"></script>
+        <script src="../assets/js/main/main.js"></script>
+        <script type="text/javascript">
+            if (document.URL.toLowerCase().indexOf("redm") > 0) {
+                document.getElementById("redeeml").style.color = '#F30';
+                document.getElementById("redeema").style.color = '#F30';
+            }
+            else if (document.URL.toLowerCase().indexOf("receive") > 0) {
+                document.getElementById("receivel").style.color = '#F30';
+                document.getElementById("receivea").style.color = '#F30';
+            }
+            else if (document.URL.toLowerCase().indexOf("warehouse") > 0) {
+                document.getElementById("warehousel").style.color = '#F30';
+                document.getElementById("warehousea").style.color = '#F30';
+            }
+            else if (document.URL.toLowerCase().indexOf("transactions") > 0) {
+                document.getElementById("transactionsl").style.color = '#F30';
+                document.getElementById("transactionsa").style.color = '#F30';
+            }
+        </script>
+    </form>
+</body>
+</html>

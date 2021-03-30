@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Root1.master.cs" Inherits="Root1" %>
+
+<%@ Register Src="~/Menu.ascx" TagPrefix="uc" TagName="menu" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title>Ziddu - Marketplace for Decentralized Smart Contracts</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/ziddu-warehouse-coin.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/72x72-Ziddu.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/114x114_Ziddu.png">
+
+    <!-- Load Core CSS 
+        =====================================-->
+    <link rel="stylesheet" href="assets/css/core/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/core/animate.min.css">
+
+    <!-- Load Main CSS 
+        =====================================-->
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/color/pasific.css">
+    <link rel="stylesheet" href="assets/css/main/setting.css">
+    <link rel="stylesheet" href="assets/css/main/hover.css">
+    <link rel="stylesheet" href="assets/css/main/cover.css">
+
+    <!-- Load OWL Carousel CSS 
+        =====================================-->
+    <link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/icon/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/icon/et-line-font.css">
+
+    <!-- Load JS
+        HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+        WARNING: Respond.js doesn't work if you view the page via file://
+        =====================================-->
+
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="topPage" data-spy="scroll" data-target=".navbar" data-offset="100">
+    <!-- Page Loader
+        ===================================== -->
+    <div id="pageloader">
+        <div class="loader-item">
+            <img src="assets/images/puff.svg" alt="loading...">
+        </div>
+    </div>
+    <a href="#page-top" class="go-to-top"><i class="fa fa-long-arrow-up"></i></a>
+    <div class="site-wrapper bg-grad-stellar">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <!-- Navigation Area
+                            ===================================== -->
+                        <nav class="navbar navbar-pasific navbar-mp megamenu navbar-fixed-top">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><i class="fa fa-bars"></i></button>
+                                    <a class="navbar-brand page-scroll" href="default.aspx">
+                                        <img src="assets/images/<%= ShowLogo() %>" alt="Ziddu"></a>
+                                </div>
+                                <div class="navbar-collapse collapse navbar-main-collapse">
+                                    <uc:menu runat="server" ID="menu" />
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p class="color-light text-center small">© 2017 Longfin Corp (NASDAQ: LFIN), All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery Core
+        =====================================-->
+    <script src="assets/js/core/jquery.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+
+    <!-- Magnific Popup
+        =====================================-->
+    <script src="assets/js/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/magnific-popup/magnific-popup-zoom-gallery.js"></script>
+
+    <!-- Progress Bars
+        =====================================-->
+    <script src="assets/js/progress-bar/bootstrap-progressbar.min.js"></script>
+    <script src="assets/js/progress-bar/bootstrap-progressbar-main.js"></script>
+
+    <!-- JQuery Main
+        =====================================-->
+    <script src="assets/js/main/jquery.appear.js"></script>
+    <script src="assets/js/main/isotope.pkgd.min.js"></script>
+    <script src="assets/js/main/parallax.min.js"></script>
+    <script src="assets/js/main/jquery.countTo.js"></script>
+    <script src="assets/js/main/owl.carousel.min.js"></script>
+    <script src="assets/js/main/jquery.sticky.js"></script>
+    <script src="assets/js/main/ion.rangeSlider.min.js"></script>
+    <script src="assets/js/main/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/main/main.js"></script>
+    <%= Ziddu.Utility.ShowHightList() %>
+</body>
+</html>
