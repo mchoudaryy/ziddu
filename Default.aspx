@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
-    <title>Ziddu - Marketplace for Decentralized Smart Contracts</title>
+    <title>Ziddu - Marketplace for DDDecentralized Smart Contracts</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta charset="utf-8">
